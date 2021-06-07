@@ -1,0 +1,30 @@
+.space-header-image {
+  background-size: cover;
+  height: 62px;
+  width: 62px;
+}
+
+.mat-card {
+  padding: 16px 16px 0 16px;
+}
+
+.mat-card-title {
+  margin-top: 8px;
+}
+
+.mat-card-subtitle {
+  margin-bottom: 8px;
+}
+
+.mat-card-subtitle:not(:first-child) {
+  margin-top: 4px;
+  color: rgba(0, 0, 0, .7);
+}
+
+.mat-standard-chip {
+  font-size: 12px;
+}
+
+.mat-card-actions {
+  margin: 16px -8px 0 -14px;
+}
