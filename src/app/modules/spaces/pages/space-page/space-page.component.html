@@ -1,0 +1,19 @@
+<app-space-card *ngIf="space" [space]="space">
+</app-space-card>
+
+<div class="section-header" *ngIf="space">
+  <h1>{{space.postsCount}} {{space.postsCount > 1 ? 'Posts' : 'Post'}}</h1>
+  <mat-divider></mat-divider>
+</div>
+
+<div *ngIf="posts">
+  <div *ngFor="let post of posts">
+    <div class="post-cards-container">
+
+      <app-post-card [post]="post">
+      </app-post-card>
+
+    </div>
+  </div>
+</div>
+

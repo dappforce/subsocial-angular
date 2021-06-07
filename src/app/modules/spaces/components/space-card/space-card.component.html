@@ -1,0 +1,46 @@
+<mat-card *ngIf="content">
+  <mat-card-content fxLayout="row" fxLayoutGap="16px">
+
+    <div>
+      <div [ngStyle]="{'background-image': 'url(' + getImageUrl(content) + ')' }"
+           mat-card-avatar class="space-header-image">
+      </div>
+    </div>
+
+    <div fxFlex>
+      <mat-card-title>{{content.name}}</mat-card-title>
+      <mat-card-subtitle>{{content.about}} &nbsp;</mat-card-subtitle>
+      <mat-chip-list>
+        <mat-chip *ngFor="let tag of content.tags">{{tag}}</mat-chip>
+      </mat-chip-list>
+      <mat-card-actions>
+        <button mat-button [routerLink]="'/spaces/' + space.id">
+          {{space.postsCount}} {{space.postsCount > 1 ? 'Posts' : 'Post'}}
+        </button>
+        <button mat-button>
+          {{space.followersCount}} {{space.followersCount > 1 ? 'Followers' : 'Follower'}}
+        </button>
+        <button mat-button>
+          About
+        </button>
+      </mat-card-actions>
+    </div>
+
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="otherActions">
+        <mat-icon>more_horiz</mat-icon>
+      </button>
+      <button mat-flat-button color="primary">Follow</button>
+
+      <mat-menu #otherActions="matMenu">
+        <button mat-menu-item>
+          <span>View on Blockchain</span>
+        </button>
+        <button mat-menu-item>
+          <span>View  on IPFS</span>
+        </button>
+      </mat-menu>
+    </div>
+
+  </mat-card-content>
+</mat-card>

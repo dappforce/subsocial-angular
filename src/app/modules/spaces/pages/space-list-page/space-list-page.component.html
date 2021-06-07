@@ -1,0 +1,14 @@
+<h1>Explore Spaces</h1>
+
+<div *ngIf="spaces"
+     infinite-scroll
+     infiniteScrollContainer=".sidenav-content" [fromRoot]="true"
+     (scrolled)="load()">
+
+  <div *ngFor="let space of spaces" class="content-card-container">
+    <app-space-card [space]="space">
+    </app-space-card>
+  </div>
+
+</div>
+

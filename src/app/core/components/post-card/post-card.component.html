@@ -1,0 +1,26 @@
+<mat-card *ngIf="postContent && creatorContent">
+  <mat-card-header>
+    <div [ngStyle]="{'background-image': 'url(' + getImageUrl() + ')' }"
+         mat-card-avatar class="post-card-image">
+    </div>
+    <mat-card-title>{{getCreatorName()}}</mat-card-title>
+    <mat-card-subtitle>{{post.createdAtTime | date:'medium'}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h2>{{postContent.title}}</h2>
+    <div>
+      {{postContent.body.split(' ').slice(0, 35).join(' ')}}
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button fxFlex mat-button>
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+    <button fxFlex mat-button>
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+    <button fxFlex mat-button>
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

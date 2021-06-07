@@ -1,0 +1,81 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$subsocial-palette: (
+  50: #f6a3d1,
+  100: #f48cc5,
+  200: #f275b9,
+  300: #ef5ead,
+  400: #ed46a2,
+  500: #eb2f96,
+  600: #e9188a,
+  700: #d3147d,
+  800: #bb126f,
+  900: #a41061,
+  A100: #f8bbdc,
+  A200: #fbd2e8,
+  A400: #fde9f4,
+  A700: #8d0e53,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: white,
+    A400: white,
+    A700: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$subsocial-ng-app-primary: mat-palette($subsocial-palette);
+$subsocial-ng-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$subsocial-ng-app-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$subsocial-ng-app-theme: mat-light-theme((
+  color: (
+    primary: $subsocial-ng-app-primary,
+    accent: $subsocial-ng-app-accent,
+    warn: $subsocial-ng-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($subsocial-ng-app-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.hover-pointer:hover {
+  cursor: pointer;
+}
